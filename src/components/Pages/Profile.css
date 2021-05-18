@@ -1,0 +1,14 @@
+h3{
+    margin: 1.2rem 5px;
+}
+.container{
+    box-shadow: slategray;
+    margin: 5px auto;
+    
+}
+
+.container .card{
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.26);
+    padding: 2rem;
+}
+

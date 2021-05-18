@@ -3,9 +3,9 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer class="text-center text-warning bg-dark" >
+    <footer className="text-center text-warning bg-dark" >
     
-    <div class="text-center p-3">
+    <div className="text-center p-3">
       © 2021 - CSC506: Introduction to Internet and Web Programming
     </div>
     
