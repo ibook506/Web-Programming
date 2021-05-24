@@ -5,12 +5,12 @@ import './Profile.css'
 
  const Profile = () =>{
     return (
-        <main className='container'>
-            <section className='card col-md-10 section-profile'>
-            <h3>Profile Details of @Name </h3>
+        <main className='container col-md-7'>
+            <section className='card col-md-auto section-profile'>
+            <h3 className='text-center'>Profile Details of @Name </h3>
 
-  <div className="row align-items-start">
-    <div className="col-md-2">
+  <div className="row justify-content-md-center">
+    <div className="col-auto">
     <img src='../../mautech1.png' alt='Mautech'/>
     </div>
     <div className="col">
@@ -21,7 +21,7 @@ import './Profile.css'
              <p> <strong>Email: </strong></p>
 
              <div className='btn-controls'>
-             <NavLink to='/' type="button" className="btn btn-primary">Close</NavLink>
+             <NavLink to='/' type="button" className="btn btn-secondary">Close</NavLink>
              <NavLink to='/edit-profile'  type="button"  className="btn btn-danger">Edit Profile</NavLink>
              </div>
         </div>

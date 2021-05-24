@@ -25,7 +25,7 @@ export default function Navbar() {
          <NavLink
               to="/dashboard"
               className="nav-link"
-              activeClassName="text-danger"
+              activeClassName="text-warning"
             >
               Dashboard
             </NavLink>
