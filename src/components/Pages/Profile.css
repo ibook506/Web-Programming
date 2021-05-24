@@ -12,3 +12,17 @@ h3{
     padding: 2rem;
 }
 
+img{
+    float: left; 
+    width: 150px; 
+    height: 150px;
+}
+
+.btn-controls a{
+    margin: 5px;
+}
+
+.detail-section{
+    margin-left: 1.2rem;
+}
+
