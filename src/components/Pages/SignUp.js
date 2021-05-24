@@ -7,7 +7,6 @@ import React from 'react'
             <section>
                 <h1>SignUp Page</h1>
             </section>
-        
         </main>
     )
 }
