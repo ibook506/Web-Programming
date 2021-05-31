@@ -12,10 +12,11 @@ h3{
     padding: 2rem;
 }
 
-img{
-    float: left; 
-    width: 150px; 
-    height: 150px;
+span{
+    display: flex;
+    margin: auto;
+    height: 100px;
+    width: 100px;
 }
 
 .btn-controls a{
@@ -23,6 +24,6 @@ img{
 }
 
 .detail-section{
-    margin-left: 1.2rem;
+    margin-left: 0;
 }
 
