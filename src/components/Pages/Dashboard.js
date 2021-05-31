@@ -44,6 +44,9 @@ import {getUsers} from '../../api'
                               {user.address}
                             </td>
                             <td>
+                              {user.phoneNo}
+                            </td>
+                            <td>
                               <Link to={`/edit-profile/${user._id}`}>Edit</Link>
                             </td>
                           </tr>

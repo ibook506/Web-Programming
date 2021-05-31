@@ -17,6 +17,7 @@ import {getUserProfile } from '../../api'
     }, [match.params.id])
 
 
+
     return user ? (
         <main className='container col-md-5'>
             <section className='card col-md-auto section-profile'>
@@ -24,7 +25,13 @@ import {getUserProfile } from '../../api'
 
   <div className="row justify-content-md-center">
     <div className="col">
-        <span className="justify-content-md-center"><img src='../../mautech1.png' alt='Mautech'/></span>
+      <form action='/upload' method="POST" encType='multipart/form-data'>
+
+      <span className="justify-content-md-center"><img src='../../mautech1.png' alt='Mautech'/></span>
+      {/* <input className="form-control form-control-lg" name='image'  type="file"  placeholder="Contact Address " aria-label=".form-control-lg example" />
+      <NavLink to='/upload'>Upload</NavLink> */}
+      </form>
+        
     
     <div className='detail-section'>  
     <table className="table table-striped mt-3">

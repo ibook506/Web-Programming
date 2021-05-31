@@ -10,7 +10,7 @@ export const createUser = (user) => fetch("http://localhost:4000/create", {
 })
 
 export const updateUser = (user, id) => fetch(`http://localhost:4000/edit-profile/${id}`, {
-  method: "POST",
+  method: "PUT",
   headers: {
     "Accept": "application/json",
     "Content-Type": "application/json"
