@@ -1,14 +1,23 @@
 import React from 'react'
+import './Loginstyle.css'
 
 
  const Login = () =>{
-    return (
-        <main className='container'>
-            <section>
-                <h1>Login Page</h1>
-            </section>
+
+    function signup() { 
+        document.querySelector(".login-form-container").style.cssText = "display: none;";  
+        document.querySelector(".container").style.cssText = "background: linear-gradient(to bottom, rgb(56, 189, 149), rgb(28, 139, 106));"; 
+        document.querySelector(".button-1").style.cssText = "display: none";
+        }
+
         
+    return (
+        <>
+        <main className='container'>
+            
         </main>
+
+        </>
     )
 }
 
