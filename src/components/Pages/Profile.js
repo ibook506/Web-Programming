@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import {NavLink, useRouteMatch } from 'react-router-dom'
 import './Profile.css'
 import {getUserProfile } from '../../api'
+import { FileUpload } from './FileUpload'
 
  const Profile = () =>{
     const match = useRouteMatch()
@@ -25,13 +26,9 @@ import {getUserProfile } from '../../api'
 
   <div className="row justify-content-md-center">
     <div className="col">
-      <form action='/upload' method="POST" encType='multipart/form-data'>
+      {/* Image Component Here */}
 
-      <span className="justify-content-md-center"><img src='../../mautech1.png' alt='Mautech'/></span>
-      {/* <input className="form-control form-control-lg" name='image'  type="file"  placeholder="Contact Address " aria-label=".form-control-lg example" />
-      <NavLink to='/upload'>Upload</NavLink> */}
-      </form>
-        
+      <FileUpload/ >
     
     <div className='detail-section'>  
     <table className="table table-striped mt-3">

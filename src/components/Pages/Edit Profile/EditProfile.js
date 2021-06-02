@@ -26,10 +26,6 @@ const EditProfile = () =>{
 }
 
 
-  
-  
- 
-  
 
   useEffect(() => {
        const fetchUser = async () => {
