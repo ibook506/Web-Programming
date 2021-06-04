@@ -23,7 +23,7 @@ import {getUsers} from '../../api'
             <section>
                 <h1>Dashboard Page</h1>
                 
-                    <table className="table table-striped mt-3">
+                    <table className="table table-striped mt-3 bg-light">
                     <thead>
                       <tr>
                         <th>Details</th>

@@ -5,11 +5,14 @@ h3{
     box-shadow: slategray;
     margin: 5px auto;
     
+    
+    
 }
 
 .container .card{
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.26);
     padding: 2rem;
+    background-color: #ededed;
 }
 
 span{
@@ -27,3 +30,15 @@ span{
     margin-left: 0;
 }
 
+.btn-wide{
+    width: 100%;
+}
+
+body{
+    background-image: url('../../bg/globe.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    
+    
+    
+}
