@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 const multer = require('multer')
 const path = require('path')
 const User = require('../backend/models/User')
+const fileupload = require('express-fileupload')
 
 //process.config(require('./config/config.env'))
 //process.config({path: './config/config.env'})
@@ -21,6 +22,7 @@ const app = express()
 
 app.use(cors())
 app.use(express.json())
+app.use(fileupload())
 app.use(express.urlencoded({extended:true}))
 
 
@@ -88,6 +90,29 @@ app.put("/edit-profile/:id", (req, res) => {
       }
     });
   });
+
+  app.post('/upload', (req, res) =>{
+      if(req.files == null){
+          res.status(400).json({msg: 'No file uploaded'})
+      }
+
+      const file = req.files.file;
+      file.mv(`${__dirname}/public/uploads/${file.name}`, err =>{
+          if(err){
+              console.error(err)
+              return res.status(500).send(err)
+          }
+
+          res.json({fileName: file.name, filepath: `/uploads/${file.name}`})
+      })
+
+      
+  })
+
+
+
+
+
 
   /*
   

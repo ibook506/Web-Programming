@@ -28,7 +28,7 @@ import { FileUpload } from './FileUpload'
     <div className="col">
       {/* Image Component Here */}
 
-      <FileUpload/ >
+      <FileUpload />
     
     <div className='detail-section'>  
     <table className="table table-striped mt-3">
