@@ -1,9 +1,9 @@
 # LIST OF STUDENTS WITH ID NUMBERS AND USER NAMES 
-CSC/15U/3279      -   ibook506
-CSC/15U/3239      -   dataCenter010
-CS/14/1816        -   shilgba
-CSC/15U/3245      -   OkenuJulietU
-CSC/15U/3282      -   Emmyluks
+#1. CSC/15U/3279      -   ibook506
+#2. CSC/15U/3239      -   dataCenter010
+#3. CS/14/1816        -   shilgba
+#4. CSC/15U/3245      -   OkenuJulietU
+#5. CSC/15U/3282      -   Emmyluks
 
 # Getting Started with Create React App
 
