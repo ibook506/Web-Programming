@@ -81,7 +81,7 @@ app.put("/edit-profile/:id", (req, res) => {
         res.status(404).send("Todo not found");
       } else {
         const {name,email,phoneNo,address} = req.body;
-        user.update({name,email,phoneNo,address})
+        user.updateOne({name,email,phoneNo,address})
           .then((user) => {  
             res.json(user);
             res.redirect(`/profile/${user.id}`)

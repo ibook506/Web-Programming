@@ -6,6 +6,7 @@ import { EditForm } from './EditForm'
 
 const EditProfile = () =>{
   const match = useRouteMatch()
+  const userId = match.params.id;
 
   const newUser = {
     name: '',
@@ -29,11 +30,11 @@ const EditProfile = () =>{
 
   useEffect(() => {
        const fetchUser = async () => {
-      const userId = await getUserEditProfile(match.params.id)
-      setUser(userId)
+      const user = await getUserEditProfile(userId)
+      setUser(user)
     }
     fetchUser()
-  }, [match.params.id]);
+  }, [userId]);
 
   
 
