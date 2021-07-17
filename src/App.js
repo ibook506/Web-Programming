@@ -20,8 +20,8 @@ function App() {
       <Route component={Dashboard} path='/dashboard'/>
       <Route component={Login} path='/login' />
       <Route component={SignUp} path='/signup' />
-      <Route component={Profile} path='/profile' />
-      <Route component={EditProfile} path='/edit-profile' />
+      <Route component={Profile} path='/profile/:id' />
+      <Route component={EditProfile} path='/edit-profile/:id' />
 
       
     </Switch>
