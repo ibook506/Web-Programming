@@ -23,4 +23,13 @@ export const getUserEditProfile = (id) => fetch(`http://localhost:4000/edit-prof
 export const getUserProfile = (id) => fetch(`http://localhost:4000/profile/${id}`).then(res => res.json())
 
 
+export const createPost = (user) => fetch("http://localhost:4000/createpost", {
+    method: "POST",
+    headers: {
+        "Accept": "application/json", 
+        "Content-Type": "applicaton/json",
+    },
+    body: JSON.stringify(user)
+})
+
 

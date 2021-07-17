@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useRouteMatch} from 'react-router-dom'
+import { useRouteMatch, NavLink} from 'react-router-dom'
 import './EditProfile.css'
 import {getUserEditProfile} from '../../../api'
 import { EditForm } from './EditForm'
@@ -26,14 +26,10 @@ const EditProfile = () =>{
     
 }
 
-<<<<<<< HEAD
         <div className='btn-controls'>
              <NavLink to='/' type="button" className="btn btn-secondary">Close</NavLink>
              <NavLink to='/edit-profile'  type="button"  className="btn btn-success">Save Record </NavLink>
              </div>
-=======
-
->>>>>>> origin/upgradeProfile
 
   useEffect(() => {
        const fetchUser = async () => {
