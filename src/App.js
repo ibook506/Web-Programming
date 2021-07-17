@@ -6,6 +6,7 @@ import Login from './components/Pages/Login'
 import SignUp from './components/Pages/SignUp'
 import Profile from './components/Pages/Profile'
 import EditProfile from './components/Pages/Edit Profile/EditProfile'
+import CreatePost from './components/Pages/Post/CreatePost'
 
 import Navbar from './components/Layouts/Navbar'
 import Footer from './components/Layouts/Footer'
@@ -22,6 +23,7 @@ function App() {
       <Route component={SignUp} path='/signup' />
       <Route component={Profile} path='/profile/:id' />
       <Route component={EditProfile} path='/edit-profile/:id' />
+      <Route component={CreatePost} path='/createpost' />
 
       
     </Switch>

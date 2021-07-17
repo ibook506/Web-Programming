@@ -110,6 +110,26 @@ app.put("/edit-profile/:id", (req, res) => {
   })
 
 
+  app.post('/createpost', (req,res)=>{
+    const {title,body} = req.body 
+    if(!title || !body){
+      return  res.status(422).json({error:"Plase add all the fields"})
+    }
+    //req.user.password = undefined
+    const post = new Post({
+        title,
+        body,
+        postedBy:req.user
+    })
+    post.save().then(result=>{
+        res.json({post:result})
+    })
+    .catch(err=>{
+        console.log(err)
+    })
+})
+
+
 
 
 
