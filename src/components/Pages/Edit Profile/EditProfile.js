@@ -26,8 +26,6 @@ const EditProfile = () =>{
   
 </div>
 
-
-  
         <div className='btn-controls'>
              <NavLink to='/' type="button" className="btn btn-secondary">Close</NavLink>
              <NavLink to='/edit-profile'  type="button"  className="btn btn-success">Save Record </NavLink>
