@@ -5,17 +5,21 @@ h3{
     box-shadow: slategray;
     margin: 5px auto;
     
+    
+    
 }
 
 .container .card{
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.26);
     padding: 2rem;
+    background-color: #ededed;
 }
 
-img{
-    float: left; 
-    width: 150px; 
-    height: 150px;
+span{
+    display: flex;
+    margin: auto;
+    height: 100px;
+    width: 100px;
 }
 
 .btn-controls a{
@@ -23,6 +27,18 @@ img{
 }
 
 .detail-section{
-    margin-left: 1.2rem;
+    margin-left: 0;
 }
 
+.btn-wide{
+    width: 100%;
+}
+
+body{
+    background-image: url('../../bg/globe.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    
+    
+    
+}

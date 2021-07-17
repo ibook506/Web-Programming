@@ -1,5 +1,7 @@
 import React from 'react'
 
+import {HomeSlide} from './HomeSlide'
+
 
  const Home = () =>{
     return (
@@ -9,6 +11,8 @@ import React from 'react'
 
                 <h1>HOME</h1>
                 <h2>Welcome to CSC 506 Web and Internet Programming</h2>
+                <HomeSlide />
+                
             </section>
         
         </main>

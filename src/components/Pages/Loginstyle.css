@@ -3,7 +3,7 @@
 	padding: 0px;; 
 	} 
 	#wrapper{
-	background-image: url('ab.jpg');
+	background-image: url('../../bg/ab.jpg');
 	background-repeat: none;
 	overflow: auto;
 	}

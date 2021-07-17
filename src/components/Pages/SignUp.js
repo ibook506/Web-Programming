@@ -1,5 +1,5 @@
 import React from 'react'
-import './SignUpstyle.css'
+//import './SignUpstyle.css'
 
 
  const SignUp = () =>{
@@ -7,52 +7,32 @@ import './SignUpstyle.css'
         <>
         <main className='container'>
             <section>
-                <h1>SignUp Page</h1>
+            <div className='container edit-profile col-md-5'>
+      <div className="row justify-content-md-center">
+        <div >
+          <form  className="card needs-validation" noValidate>
+            <h3 className='text-center text-danger'>Sign Up </h3>
+            
+            <input className="form-control form-control-lg" name='name'   type="text" placeholder="Full Name" aria-label=".form-control-lg example" />
+            <input className="form-control form-control-lg" name='email'    type="email"  placeholder="E-mail" aria-label=".form-control-lg example" />
 
-                <div id= "wrapper">
-
-                <div class="container"> 
-<div class="box-1"> 
-<div class="content-holder"> 
-<h2>Hello!</h2> 
-<p>Don't hava an account? </p> 
-<button class="button-1" onclick="signup()"><a href="SignUp.html">Sign up</a></button>
-</div>
-</div> 
-</div>
-
-
-<div class="box-2">
-<div class="login-form-container"> 
-<h1>Login</h1> 
-<input type="text" placeholder="Username" class="input-field" /> 
-<br/>
-<input type="password" placeholder="Password" class="input-field" /> 
-<br/> 
-
-<input id="check" type="checkbox" class="check" checked />
- <label for="check">
-<span class="icon"></span> Keep me Logged in</label> 
-<br/>
-<button class="login-button" type="button">Login</button>
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-
-
-
-                </div>
-
-
-                
+            <input className="form-control form-control-lg" name='password'    type="password"  placeholder="Password " aria-label=".form-control-lg example" />
+    
+            <input className="form-control form-control-lg" name='phoneNo'    type="number" placeholder="Phone Number" max='11' aria-label=".form-control-lg example" />
+    
+            <input className="form-control form-control-lg" name='address'  type="address"  placeholder="Contact Address " aria-label=".form-control-lg example" />
+            <div className='btn-controls'>
+            <button  type="submit"  className="btn btn-danger btn-wide mb-2"> Sign Up  </button>
+                 <p>Already have an account?  <a href='/login'> Login </a> </p>  
+                 </div>   
+    </form>
+    
+        </div>
+       
+      </div>
+      
+    
+            </div>                
                 
         </section>
         </main>

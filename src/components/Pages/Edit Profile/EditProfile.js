@@ -1,50 +1,50 @@
-import React from 'react'
-import {NavLink} from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { useRouteMatch} from 'react-router-dom'
 import './EditProfile.css'
+import {getUserEditProfile} from '../../../api'
+import { EditForm } from './EditForm'
 
 const EditProfile = () =>{
-    return (
-        <>
-        <div className='container edit-profile'>
+  const match = useRouteMatch()
+  const userId = match.params.id;
 
-        
-  <div class="row justify-content-md-center">
+  const newUser = {
+    name: '',
+    email: '',
+    address: '',
+    phoneNo: ''
+  }
+  const [user, setUser] = useState(newUser);
+
+  const handleEditUser = async (e) => {
+    e.preventDefault();
+    const { name, value } = e.target;
+    setUser({
+      ...user,
+        [name]: value,
+    })
     
-    <div class="col-md-auto">
-      
-      <form className="card needs-validation" noValidate>
-        <h3 className='text-center text-danger'>Update Profile Details</h3>
-        <input className="form-control form-control-lg" type="text" placeholder="Full Name" aria-label=".form-control-lg example" />
-        <input className="form-control form-control-lg" type="email" placeholder="E-mail" aria-label=".form-control-lg example" />
+}
 
-        <input className="form-control form-control-lg" type="number" placeholder="Phone Number" aria-label=".form-control-lg example" />
 
-        <input className="form-control form-control-lg" type="address" placeholder="Contact Address " aria-label=".form-control-lg example" />
 
-        <div class="input-group mb-3">
-        <input type="file" class="form-control" id="inputGroupFile02" />
-  
-</div>
-
+  useEffect(() => {
+       const fetchUser = async () => {
+      const user = await getUserEditProfile(userId)
+      setUser(user)
+    }
+    fetchUser()
+  }, [userId]);
 
   
-        <div className='btn-controls'>
-             <NavLink to='/' type="button" className="btn btn-secondary">Close</NavLink>
-             <NavLink to='/edit-profile'  type="button"  className="btn btn-success">Save Record </NavLink>
-             </div>
 
-             
-</form>
 
-    </div>
-   
-  </div>
-  
-
-        </div>
-
-        </>
+ 
+    return (
+       
+         <EditForm handleEditUser={handleEditUser} user={user} />
     )
+    
 }
 
 export default EditProfile
