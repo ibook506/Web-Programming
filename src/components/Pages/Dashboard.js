@@ -16,8 +16,7 @@ import {getUsers} from '../../api'
  
      }, [])
  
- console.log(users)
- 
+  
     return (
         <main className='container'>
             <section>

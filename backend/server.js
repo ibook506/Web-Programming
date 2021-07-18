@@ -9,8 +9,9 @@ const fileupload = require('express-fileupload')
 
 //process.config(require('./config/config.env'))
 //process.config({path: './config/config.env'})
+const url = 'mongodb://localhost:27017/'
 
-mongoose.connect('mongodb://localhost:27017/users', {useNewUrlParser: true})
+mongoose.connect(url, {useNewUrlParser: true})
 mongoose.connection.once('open', ()=>{
     console.log('Mongodb connection established successfully');
 }
@@ -127,7 +128,17 @@ app.put("/edit-profile/:id", (req, res) => {
     //req.user.password = undefined
     const newPost = new Post({body});
     return newPost.save();
-    
+})
+
+app.get('/posts', (req, res) =>{
+    Post.find((err, post)=>{
+        if(err){
+            console.log(err);
+        }else{
+            res.json(post)
+        }
+    }) 
+   
 
 })
 

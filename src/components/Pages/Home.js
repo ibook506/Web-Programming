@@ -1,10 +1,25 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
 
 import {HomeSlide} from './HomeSlide'
 import Post from './Post/CreatePost'
+import {getPosts} from '../../api'
 
 
  const Home = () =>{
+  const [posts, setPosts] = useState([])
+
+  useEffect(()=>{
+      const fetchPosts = async () =>{
+          const posts = await getPosts()
+          setPosts(posts)
+      }
+
+      fetchPosts()
+
+   }, [])
+
+   console.log(posts)
+
     return (
         <>
         <main className='container'>

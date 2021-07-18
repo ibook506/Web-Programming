@@ -34,3 +34,4 @@ export const createPost = (user) => fetch("http://localhost:4000/createpost", {
 })
 
 
+export const getPosts = () => fetch("http://localhost:4000/posts").then(res => res.json())
