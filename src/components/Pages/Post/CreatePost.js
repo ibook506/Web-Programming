@@ -6,14 +6,13 @@ const CreatePost = ()=>{
     const history = useHistory()
     
 
-    const [body,setBody] = useState("")
-    
+  const [body,setBody] = useState("")  
    const onSubmit = (e)=>{
-       e.preventDefault()
-       console.log(body)
+      e.preventDefault()
       createPost({body});
-      history.push('/createpost')
-       
+      setBody("")
+      history.push('/')
+
    }
  
 
@@ -25,7 +24,7 @@ const CreatePost = ()=>{
             <h3 className='text-center text-danger'>Post Here </h3>
             
             
-            <input className="form-control form-control-lg" name='body'  onChange={(e)=>setBody(e.target.value)}  value={body} type="text"  placeholder="What's on your mind..." aria-label=".form-control-lg example" />
+            <input className="form-control form-control-lg" name='body' required  onChange={(e)=>setBody(e.target.value)}  value={body} type="text"  placeholder="What's on your mind..." aria-label=".form-control-lg example" />
     
     
             <div className='btn-controls'>
