@@ -1,6 +1,7 @@
 import React from 'react'
 
 import {HomeSlide} from './HomeSlide'
+import Post from './Post/CreatePost'
 
 
  const Home = () =>{
@@ -10,12 +11,15 @@ import {HomeSlide} from './HomeSlide'
             <section>
 
 
-                <h1>HOME</h1>
-                <h2>Welcome to CSC 506 Web and Internet Programming</h2>
+                
+                <h2 className="text-warning center" >Welcome to CSC 506 Web and Internet Programming</h2>
+                <Post />
                 <HomeSlide />
-                <div class="media-body">
+                
+
+                <div className="text-light">
                                 <h3>Brief History of the Internet</h3>
-                                <p>As far back as the early stirrings of the Cold War, the concept of a network connecting
+                                <p className="white">As far back as the early stirrings of the Cold War, the concept of a network connecting
                             computers was under development by both government and university researchers looking
                             for a better means to communicate and share research. The military at the time relied in
                             part on microwave transmission technology for communications. An unexpected attack on
@@ -33,16 +37,17 @@ import {HomeSlide} from './HomeSlide'
                             organizations due to the staffing demands, size, and cost to acquire and maintain them. The
                             image below depicts the UNIVAC 1, a system used by the United States Census Bureau
                             and other large organizations like universities.</p>
-                    </div>
-
-            
-
-
-
-
-
+                    </div>         
                </section>   
+               
         </main>
+
+        <div class="input-group input-group-lg">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-lg">Comment</span>
+  </div>
+  <input type="text" name="comment" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="comment" />
+</div>
         </>
     )
 }
