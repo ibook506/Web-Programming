@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 const multer = require('multer')
 const path = require('path')
 const User = require('../backend/models/User')
+const Post = require('../backend/models/Post')
 const fileupload = require('express-fileupload')
 
 //process.config(require('./config/config.env'))
@@ -75,7 +76,8 @@ app.get('/edit-profile/:id', (req, res) =>{
 
 
 app.put("/edit-profile/:id", (req, res) => {
-    const id = req.params.id;
+    try{
+        const id = req.params.id;
     User.findById(id, (err, user) => {
       if (!user) {
         res.status(404).send("Todo not found");
@@ -89,44 +91,44 @@ app.put("/edit-profile/:id", (req, res) => {
           .catch((err) => res.status(500).send(err.message));
       }
     });
+        
+    }catch (err){
+        console.log(err)
+    }
+    
   });
 
   app.post('/upload', (req, res) =>{
-      if(req.files == null){
-          res.status(400).json({msg: 'No file uploaded'})
+      try{
+        if(req.files == null){
+            res.status(400).json({msg: 'No file uploaded'})
+        }
+  
+        const file = req.files.file;
+        file.mv(`${__dirname}/public/uploads/${file.name}`, err =>{
+            if(err){
+                console.error(err)
+                return res.status(500).send(err)
+            }
+  
+            res.json({fileName: file.name, filepath: `/uploads/${file.name}`})
+        })
+      }catch(err){
+          console.log(err)
       }
-
-      const file = req.files.file;
-      file.mv(`${__dirname}/public/uploads/${file.name}`, err =>{
-          if(err){
-              console.error(err)
-              return res.status(500).send(err)
-          }
-
-          res.json({fileName: file.name, filepath: `/uploads/${file.name}`})
-      })
 
       
   })
 
 
   app.post('/createpost', (req,res)=>{
-    const {title,body} = req.body 
-    if(!title || !body){
-      return  res.status(422).json({error:"Plase add all the fields"})
-    }
+    const {body} = req.body 
+    
     //req.user.password = undefined
-    const post = new Post({
-        title,
-        body,
-        postedBy:req.user
-    })
-    post.save().then(result=>{
-        res.json({post:result})
-    })
-    .catch(err=>{
-        console.log(err)
-    })
+    const newPost = new Post({body});
+    return newPost.save();
+    
+
 })
 
 
@@ -134,31 +136,7 @@ app.put("/edit-profile/:id", (req, res) => {
 
 
 
-  /*
   
-  const storage = multer.diskStorage({
-    destination: (req, file, cb)=>{
-        cb(null, "Images")
-    },
-    filename: (req, file, cb)=>{
-        cb(null, file.fieldname + " "+ Date.now()+ "_" + file.originalname)
-    }
-})
-
-const upload = multer({storage: storage})
-
-
-  app.get('/upload', (req, res) =>{
-      res.send('Image Upload')
-  })
-
-  app.post('/upload', upload.single('image'),  (req, res) =>{
-      res.send('image Uploaded')
-  })
-
-  
-*/
-
 app.listen(PORT, ()=>{
     console.log(`Server running on mode on port ${PORT}`);
 })

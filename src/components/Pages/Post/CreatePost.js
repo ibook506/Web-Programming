@@ -1,49 +1,18 @@
-import React,{useState,useEffect} from 'react'
-import {useHistory, NavLink} from 'react-router-dom'
+import React,{useState} from 'react'
+import {useHistory} from 'react-router-dom'
+import {createPost} from '../../../api'
 
 const CreatePost = ()=>{
     const history = useHistory()
-    const [title,setTitle] = useState("")
+    
+
     const [body,setBody] = useState("")
     
-    const [url,setUrl] = useState("")
-    useEffect(()=>{
-       if(url){
-        fetch("/createpost",{
-            method:"POST",
-            headers:{
-                "Accept": "application/json",
-                "Content-Type":"application/json",
-                
-            },
-            body:JSON.stringify({
-                title,
-                body
-            })
-        }).then(res=>res.json())
-        .then(data=>{
-    
-           if(data.error){
-             console.log({html: data.error,classes:"#c62828 red darken-3"})
-           }
-           else{
-               console.log({html:"Created post Successfully",classes:"#43a047 green darken-1"})
-               history.push('/')
-           }
-        }).catch(err=>{
-            console.log(err)
-        })
-    }
-    },[url])
-  
-   const onSubmit = ()=>{
-       fetch("/createpost",{
-           method:"post",
-           body: JSON.stringify({
-            title,
-            body
-        })
-       })
+   const onSubmit = (e)=>{
+       e.preventDefault()
+       console.log(body)
+      createPost({body});
+      history.push('/createpost')
        
    }
  
