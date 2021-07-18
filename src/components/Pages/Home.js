@@ -5,6 +5,7 @@ import {HomeSlide} from './HomeSlide'
 
  const Home = () =>{
     return (
+        <>
         <main className='container'>
             <section>
 
@@ -12,7 +13,7 @@ import {HomeSlide} from './HomeSlide'
                 <h1>HOME</h1>
                 <h2>Welcome to CSC 506 Web and Internet Programming</h2>
                 <HomeSlide />
-            <div class="media-body">
+                <div class="media-body">
                                 <h3>Brief History of the Internet</h3>
                                 <p>As far back as the early stirrings of the Cold War, the concept of a network connecting
                             computers was under development by both government and university researchers looking
@@ -32,22 +33,17 @@ import {HomeSlide} from './HomeSlide'
                             organizations due to the staffing demands, size, and cost to acquire and maintain them. The
                             image below depicts the UNIVAC 1, a system used by the United States Census Bureau
                             and other large organizations like universities.</p>
+                    </div>
+
+            
 
 
 
 
-                   </div>
-                <form action="/html/tags/html_form_tag_action.cfm" method="post">
-                  <div>
-                  <textarea name="comments" id="comments" style="font-family:sans-serif;font-size:1.2em;">
-                  Comment box
-                  </textarea>
-                  </div>
-                  <input type="submit" value="Submit">
-                 </form>
-            </section>
-        
+
+               </section>   
         </main>
+        </>
     )
 }
 
