@@ -76,7 +76,8 @@ app.get('/edit-profile/:id', (req, res) =>{
 
 
 app.put("/edit-profile/:id", (req, res) => {
-    const id = req.params.id;
+    try{
+        const id = req.params.id;
     User.findById(id, (err, user) => {
       if (!user) {
         res.status(404).send("Todo not found");
@@ -90,22 +91,31 @@ app.put("/edit-profile/:id", (req, res) => {
           .catch((err) => res.status(500).send(err.message));
       }
     });
+        
+    }catch (err){
+        console.log(err)
+    }
+    
   });
 
   app.post('/upload', (req, res) =>{
-      if(req.files == null){
-          res.status(400).json({msg: 'No file uploaded'})
+      try{
+        if(req.files == null){
+            res.status(400).json({msg: 'No file uploaded'})
+        }
+  
+        const file = req.files.file;
+        file.mv(`${__dirname}/public/uploads/${file.name}`, err =>{
+            if(err){
+                console.error(err)
+                return res.status(500).send(err)
+            }
+  
+            res.json({fileName: file.name, filepath: `/uploads/${file.name}`})
+        })
+      }catch(err){
+          console.log(err)
       }
-
-      const file = req.files.file;
-      file.mv(`${__dirname}/public/uploads/${file.name}`, err =>{
-          if(err){
-              console.error(err)
-              return res.status(500).send(err)
-          }
-
-          res.json({fileName: file.name, filepath: `/uploads/${file.name}`})
-      })
 
       
   })

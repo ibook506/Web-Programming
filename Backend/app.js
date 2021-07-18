@@ -145,9 +145,7 @@ router.post('/register', (req, res) => {
 });
 
 // Register
-// Booking Appointment
 router.post('/post', ensureAuthenticated, (req, res) => {
-
   const { postID, userID, title, message } = req.body;
   let errors = [];
 

@@ -24,6 +24,7 @@ export const getUserProfile = (id) => fetch(`http://localhost:4000/profile/${id}
 
 
 export const createPost = (user) => fetch("http://localhost:4000/createpost", {
+
     method: "POST",
     headers: {
       "Accept": "application/json",

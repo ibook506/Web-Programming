@@ -63,15 +63,7 @@ export default function Navbar() {
             </NavLink>
          </li>
 
-         <li className="nav-item">
-         <NavLink
-              to="/createpost"
-              className="nav-link"
-              activeClassName="text-warning"
-            >
-              Post
-            </NavLink>
-         </li>
+         
        </ul>
      </div>
    </div>
